@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import {motion} from "framer-motion";
 import {PulsingButton} from "./components/PulsingButton";
+import {BouncingLoader} from "./components/BouncingLoader";
 
 function App() {
 
@@ -21,7 +22,8 @@ function App() {
                     transition={{duration: 5}}
         />*/}
 
-        <PulsingButton/>
+        {/*<PulsingButton/>*/}
+        <BouncingLoader/>
     </div>
   )
 }
