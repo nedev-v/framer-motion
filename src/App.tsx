@@ -5,6 +5,13 @@ import {BouncingLoader} from "./components/BouncingLoader";
 
 function App() {
 
+    const [isVisible, setIsVisible] = useState(true);
+    const variants = {
+        hidden: {opacity: 0, scale: 0.8},
+        visible: {opacity: 1, scale: 1},
+        exit: {opacity: 0, scale: 0.5}
+    };
+
   return (
     <div>
       {/*<motion.div className="box"
@@ -23,7 +30,18 @@ function App() {
         />*/}
 
         {/*<PulsingButton/>*/}
-        <BouncingLoader/>
+        {/*<BouncingLoader/>*/}
+
+        <motion.div className="box"
+            variants={variants}
+            initial="hidden"
+            animate={isVisible ? 'visible' : 'hidden'}
+            exit="exit"
+                    transition={{duration: 0.3, ease: "easeOut"}}
+                    onClick={() => setIsVisible(!isVisible)}
+        >
+
+        </motion.div>
     </div>
   )
 }
